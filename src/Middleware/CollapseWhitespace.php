@@ -62,22 +62,21 @@ class CollapseWhitespace extends PageSpeed
     {
         $index = 0;
 
-        foreach (self::PRESERVE_TAGS as $tag) {
-            // Match opening and closing tags with all content in between
-            // This regex handles:
-            // - Tags with or without attributes
-            // - Self-closing tags (though not common for these tags)
-            // - Nested content
-            // - Case-insensitive matching
-            $pattern = '/<(' . $tag . ')(\s[^>]*)?>(.*?)<\/\1>/is';
+        $preserveCallback = function (array $matches) use (&$preserved, &$index): string {
+            $placeholder = "___PRESERVED_CONTENT_{$index}___";
+            $preserved[$placeholder] = $matches[0];
+            $index++;
 
-            $buffer = preg_replace_callback($pattern, function ($matches) use (&$preserved, &$index) {
-                $placeholder = "___PRESERVED_CONTENT_{$index}___";
-                $preserved[$placeholder] = $matches[0]; // Store the entire tag with content
-                $index++;
-                return $placeholder;
-            }, $buffer);
+            return $placeholder;
+        };
+
+        foreach (self::PRESERVE_TAGS as $tag) {
+            $pattern = '/<('.$tag.')(\s[^>]*)?>(.*?)<\/\1>/is';
+            $buffer = preg_replace_callback($pattern, $preserveCallback, $buffer);
         }
+
+        $attrPattern = '/\b(wire:snapshot|wire:effects|x-data|x-init)\s*=\s*(["\'])(.*?)\2/is';
+        $buffer = preg_replace_callback($attrPattern, $preserveCallback, $buffer);
 
         return $buffer;
     }
@@ -87,11 +86,11 @@ class CollapseWhitespace extends PageSpeed
      */
     protected function restorePreservedContent(string $buffer, array $preserved): string
     {
-        foreach ($preserved as $placeholder => $content) {
-            $buffer = str_replace($placeholder, $content, $buffer);
+        if (empty($preserved)) {
+            return $buffer;
         }
 
-        return $buffer;
+        return strtr($buffer, $preserved);
     }
 
     /**
