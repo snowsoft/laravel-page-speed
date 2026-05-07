@@ -163,7 +163,7 @@ See `docs/API-CACHE.md` for design details.
 
 ## 5. How to Use
 
-1. **Publish once** using `php artisan vendor:publish --provider="VinkiusLabs\\LaravelPageSpeed\\ServiceProvider"`.
+1. **Publish once** using `php artisan vendor:publish --provider="Snowsoft\\LaravelPageSpeed\\ServiceProvider"`.
 2. **Version control the file** to keep configuration auditable across environments.
 3. **Leverage environment variables** to toggle features per deployment (e.g., disable cache in staging by default).
 4. **Group related overrides** in custom config files if your application uses multiple API stacks (e.g., `config/page-speed-tenant.php`).

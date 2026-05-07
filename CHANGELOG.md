@@ -113,7 +113,7 @@ All notable changes to `laravel-page-speed` will be documented in this file.
     "require": {
         "php": "^8.2 || ^8.3",
         "laravel/framework": "^10.0 || ^11.0 || ^12.0",
-        "vinkius-labs/laravel-page-speed": "^3.0"
+        "snowsoft/laravel-page-speed": "^3.0"
     }
 }
 ```
@@ -121,7 +121,7 @@ All notable changes to `laravel-page-speed` will be documented in this file.
 2. Run composer update:
 
 ```bash
-composer update vinkius-labs/laravel-page-speed
+composer update snowsoft/laravel-page-speed
 ```
 
 3. Clear config cache:
@@ -143,7 +143,7 @@ If you need to stay on Laravel 6-9 or PHP 8.0/8.1, use version constraint:
 ```json
 {
     "require": {
-        "vinkius-labs/laravel-page-speed": "^2.1"
+        "snowsoft/laravel-page-speed": "^2.1"
     }
 }
 ```

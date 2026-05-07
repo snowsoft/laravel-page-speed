@@ -1,9 +1,9 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
-use VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\CollapseWhitespace;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

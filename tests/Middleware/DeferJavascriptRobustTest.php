@@ -1,9 +1,9 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
-use VinkiusLabs\LaravelPageSpeed\Middleware\DeferJavascript;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\DeferJavascript;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 
 class DeferJavascriptRobustTest extends TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
-use VinkiusLabs\LaravelPageSpeed\Middleware\InlineCss;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\InlineCss;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 
 class InlineCssJavaScriptFrameworksTest extends TestCase
 {

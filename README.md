@@ -1,14 +1,14 @@
 <p align="center">
-    <img width="420" src="https://raw.githubusercontent.com/vinkius-labs/laravel-page-speed/master/art/logo.png" alt="Laravel Page Speed" />
+    <img width="420" src="https://raw.githubusercontent.com/snowsoft/laravel-page-speed/master/art/logo.png" alt="Laravel Page Speed" />
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/vinkius-labs/laravel-page-speed"><img src="https://img.shields.io/packagist/v/vinkius-labs/laravel-page-speed?style=flat-square" alt="Latest Version"></a>
+    <a href="https://packagist.org/packages/snowsoft/laravel-page-speed"><img src="https://img.shields.io/packagist/v/snowsoft/laravel-page-speed?style=flat-square" alt="Latest Version"></a>
     <a href="https://packagist.org/packages/renatomarinho/laravel-page-speed"><img src="https://img.shields.io/packagist/dt/renatomarinho/laravel-page-speed?style=flat-square" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/vinkius-labs/laravel-page-speed"><img src="https://img.shields.io/packagist/dd/vinkius-labs/laravel-page-speed?style=flat-square" alt="Daily Downloads"></a>
-    <a href="https://packagist.org/packages/vinkius-labs/laravel-page-speed"><img src="https://img.shields.io/packagist/l/vinkius-labs/laravel-page-speed?style=flat-square" alt="License"></a>
-    <a href="https://packagist.org/packages/vinkius-labs/laravel-page-speed"><img src="https://img.shields.io/github/stars/vinkius-labs/laravel-page-speed?style=flat-square" alt="GitHub Stars"></a>
-    <a href="https://packagist.org/packages/vinkius-labs/laravel-page-speed"><img src="https://img.shields.io/packagist/php-v/vinkius-labs/laravel-page-speed?style=flat-square" alt="PHP Version"></a>
+    <a href="https://packagist.org/packages/snowsoft/laravel-page-speed"><img src="https://img.shields.io/packagist/dd/snowsoft/laravel-page-speed?style=flat-square" alt="Daily Downloads"></a>
+    <a href="https://packagist.org/packages/snowsoft/laravel-page-speed"><img src="https://img.shields.io/packagist/l/snowsoft/laravel-page-speed?style=flat-square" alt="License"></a>
+    <a href="https://packagist.org/packages/snowsoft/laravel-page-speed"><img src="https://img.shields.io/github/stars/snowsoft/laravel-page-speed?style=flat-square" alt="GitHub Stars"></a>
+    <a href="https://packagist.org/packages/snowsoft/laravel-page-speed"><img src="https://img.shields.io/packagist/php-v/snowsoft/laravel-page-speed?style=flat-square" alt="PHP Version"></a>
 </p>
 
 # Laravel Page Speed
@@ -61,11 +61,11 @@ Append the middleware inside the `web` group so the order stays deterministic:
 protected $middlewareGroups = [
     'web' => [
         // ... existing middleware
-        \VinkiusLabs\LaravelPageSpeed\Middleware\InlineCss::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ElideAttributes::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\DeferJavascript::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\InlineCss::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ElideAttributes::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\DeferJavascript::class,
     ],
 ];
 ```
@@ -81,11 +81,11 @@ return Application::configure(basePath: __DIR__.'/../')
     // ... existing configuration
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->appendToGroup('web', [
-            \VinkiusLabs\LaravelPageSpeed\Middleware\InlineCss::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ElideAttributes::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\DeferJavascript::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\InlineCss::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ElideAttributes::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\DeferJavascript::class,
         ]);
 
         // keep other group definitions (api, broadcast, etc.) here
@@ -103,13 +103,13 @@ Attach only the middleware that fits your API architecture.
 protected $middlewareGroups = [
     'api' => [
         // ... existing middleware
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiETag::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
     ],
 ];
 ```
@@ -120,21 +120,21 @@ Inside the same `->withMiddleware` closure from the Web section, append the API 
 
 ```php
 $middleware->appendToGroup('api', [
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiETag::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
 ]);
 ```
 
 ### Publish assets and baseline environment variables
 
 ```bash
-composer require vinkius-labs/laravel-page-speed
-php artisan vendor:publish --provider="VinkiusLabs\\LaravelPageSpeed\\ServiceProvider"
+composer require snowsoft/laravel-page-speed
+php artisan vendor:publish --provider="Snowsoft\\LaravelPageSpeed\\ServiceProvider"
 ```
 
 Recommended baseline for cached APIs:

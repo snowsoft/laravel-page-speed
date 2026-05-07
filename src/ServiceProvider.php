@@ -1,6 +1,6 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed;
+namespace Snowsoft\LaravelPageSpeed;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

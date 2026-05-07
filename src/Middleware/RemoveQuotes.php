@@ -1,8 +1,8 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Middleware;
 
-use VinkiusLabs\LaravelPageSpeed\Entities\HtmlSpecs;
+use Snowsoft\LaravelPageSpeed\Entities\HtmlSpecs;
 
 class RemoveQuotes extends PageSpeed
 {

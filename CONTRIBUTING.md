@@ -1,6 +1,6 @@
 # Contributing to Laravel Page Speed
 
-Thank you for considering contributing to Laravel Page Speed! We welcome contributions via Pull Requests on [GitHub](https://github.com/vinkius-labs/laravel-page-speed).
+Thank you for considering contributing to Laravel Page Speed! We welcome contributions via Pull Requests on [GitHub](https://github.com/snowsoft/laravel-page-speed).
 
 ## 📋 Quick Guidelines
 

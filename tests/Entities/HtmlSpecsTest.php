@@ -1,9 +1,9 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Entities;
+namespace Snowsoft\LaravelPageSpeed\Test\Entities;
 
 use PHPUnit\Framework\TestCase;
-use VinkiusLabs\LaravelPageSpeed\Entities\HtmlSpecs;
+use Snowsoft\LaravelPageSpeed\Entities\HtmlSpecs;
 
 class HtmlSpecsTest extends TestCase
 {

@@ -49,8 +49,8 @@ The recommended order inside the `api` group places hardening first, then cachin
 1. Require and publish assets:
 
     ```bash
-    composer require vinkius-labs/laravel-page-speed
-    php artisan vendor:publish --provider="VinkiusLabs\\LaravelPageSpeed\\ServiceProvider"
+    composer require snowsoft/laravel-page-speed
+    php artisan vendor:publish --provider="Snowsoft\\LaravelPageSpeed\\ServiceProvider"
     ```
 
 2. Wire the stack using the configuration style for your Laravel version:
@@ -61,13 +61,13 @@ The recommended order inside the `api` group places hardening first, then cachin
     protected $middlewareGroups = [
         'api' => [
             // Core Laravel middleware …
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
-            \VinkiusLabs\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiETag::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
+            \Snowsoft\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
         ],
     ];
     ```
@@ -78,13 +78,13 @@ The recommended order inside the `api` group places hardening first, then cachin
 
     ```php
     $middleware->appendToGroup('api', [
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
-        \VinkiusLabs\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiETag::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiCircuitBreaker::class,
+        \Snowsoft\LaravelPageSpeed\Middleware\ApiHealthCheck::class,
     ]);
     ```
 
@@ -182,11 +182,11 @@ The recommended order inside the `api` group places hardening first, then cachin
     \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
     'throttle:api',
     \Illuminate\Routing\Middleware\SubstituteBindings::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
-    \VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiETag::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
+    \Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
 ];
 ```
 
@@ -205,7 +205,7 @@ Enable expensive telemetry only outside production:
 
 ```php
 if (! app()->environment('production')) {
-    $router->pushMiddlewareToGroup('api', \VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class);
+    $router->pushMiddlewareToGroup('api', \Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class);
 }
 ```
 

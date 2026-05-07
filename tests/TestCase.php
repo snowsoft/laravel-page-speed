@@ -1,9 +1,9 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test;
+namespace Snowsoft\LaravelPageSpeed\Test;
 
 use Illuminate\Http\Request;
-use VinkiusLabs\LaravelPageSpeed\ServiceProvider;
+use Snowsoft\LaravelPageSpeed\ServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra

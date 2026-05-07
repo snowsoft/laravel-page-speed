@@ -1,11 +1,11 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 
 class ApiPerformanceHeadersTest extends TestCase
 {

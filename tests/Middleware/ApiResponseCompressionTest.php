@@ -1,11 +1,11 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 
 class ApiResponseCompressionTest extends TestCase
 {

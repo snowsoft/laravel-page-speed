@@ -1,12 +1,12 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiHealthCheck;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiHealthCheck;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 
 /**
  * Robust tests for ApiHealthCheck with chaos engineering scenarios

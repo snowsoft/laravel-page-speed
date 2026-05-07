@@ -1,12 +1,12 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiCircuitBreaker;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiCircuitBreaker;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
 
 /**
  * Robust tests for ApiCircuitBreaker with chaos engineering scenarios

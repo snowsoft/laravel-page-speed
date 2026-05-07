@@ -1,18 +1,18 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Test\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Test\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Cache;
-use VinkiusLabs\LaravelPageSpeed\Test\TestCase;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiCircuitBreaker;
-use VinkiusLabs\LaravelPageSpeed\Middleware\ApiHealthCheck;
+use Snowsoft\LaravelPageSpeed\Test\TestCase;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiETag;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiCircuitBreaker;
+use Snowsoft\LaravelPageSpeed\Middleware\ApiHealthCheck;
 
 /**
  * Integration tests for multiple middlewares working together

@@ -147,10 +147,10 @@ Laravel Page Speed is production-proven. When paired with disciplined rollout an
 
 ## 📧 Contact & Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/vinkius-labs/laravel-page-speed/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/vinkius-labs/laravel-page-speed/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/snowsoft/laravel-page-speed/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/snowsoft/laravel-page-speed/discussions)
 - 📧 **Email**: renato.marinho@s2move.com
-- ⭐ **Star us**: [GitHub Repository](https://github.com/vinkius-labs/laravel-page-speed)
+- ⭐ **Star us**: [GitHub Repository](https://github.com/snowsoft/laravel-page-speed)
 
 ---
 
@@ -159,5 +159,5 @@ Laravel Page Speed is production-proven. When paired with disciplined rollout an
 </p>
 
 <p align="center">
-    Made with ❤️ by VinkiusLabs
+    Made with ❤️ by Snowsoft
 </p>

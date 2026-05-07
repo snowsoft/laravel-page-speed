@@ -1,6 +1,6 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Entities;
+namespace Snowsoft\LaravelPageSpeed\Entities;
 
 class HtmlSpecs
 {

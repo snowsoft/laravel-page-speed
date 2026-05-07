@@ -1,9 +1,9 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Middleware;
 
 use Closure;
-use VinkiusLabs\LaravelPageSpeed\Entities\HtmlSpecs;
+use Snowsoft\LaravelPageSpeed\Entities\HtmlSpecs;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Support\Facades\Log;
@@ -217,10 +217,15 @@ abstract class PageSpeed
         // Performance: Use preg_replace_callback for single-pass processing
         // This is much faster than iterating and doing multiple str_replace on the entire buffer
         foreach ($patterns as $pattern) {
-            $buffer = preg_replace_callback($pattern, function ($matches) use ($regex, $replace) {
+            $result = preg_replace_callback($pattern, function ($matches) use ($regex, $replace) {
                 // Apply the regex replacement only within this tag
-                return preg_replace($regex, $replace, $matches[0]);
+                $replaced = preg_replace($regex, $replace, $matches[0]);
+                return $replaced !== null ? $replaced : $matches[0];
             }, $buffer);
+            
+            if ($result !== null) {
+                $buffer = $result;
+            }
         }
 
         return $buffer;

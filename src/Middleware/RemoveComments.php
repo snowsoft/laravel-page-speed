@@ -1,6 +1,6 @@
 <?php
 
-namespace VinkiusLabs\LaravelPageSpeed\Middleware;
+namespace Snowsoft\LaravelPageSpeed\Middleware;
 
 class RemoveComments extends PageSpeed
 {

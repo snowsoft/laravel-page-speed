@@ -29,11 +29,11 @@ Curated configurations that show how Laravel Page Speed can be embedded into dif
 **Recommended middleware order:**
 
 ```php
-\VinkiusLabs\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
-\VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCache::class,
-\VinkiusLabs\LaravelPageSpeed\Middleware\ApiETag::class,
-\VinkiusLabs\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
-\VinkiusLabs\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
+\Snowsoft\LaravelPageSpeed\Middleware\ApiSecurityHeaders::class,
+\Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCache::class,
+\Snowsoft\LaravelPageSpeed\Middleware\ApiETag::class,
+\Snowsoft\LaravelPageSpeed\Middleware\ApiResponseCompression::class,
+\Snowsoft\LaravelPageSpeed\Middleware\ApiPerformanceHeaders::class,
 ```
 
 **Configuration highlights:**
