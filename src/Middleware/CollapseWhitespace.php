@@ -72,11 +72,17 @@ class CollapseWhitespace extends PageSpeed
 
         foreach (self::PRESERVE_TAGS as $tag) {
             $pattern = '/<('.$tag.')(\s[^>]*)?>(.*?)<\/\1>/is';
-            $buffer = preg_replace_callback($pattern, $preserveCallback, $buffer);
+            $result = preg_replace_callback($pattern, $preserveCallback, $buffer);
+            if ($result !== null) {
+                $buffer = $result;
+            }
         }
 
         $attrPattern = '/\b(wire:snapshot|wire:effects|x-data|x-init)\s*=\s*(["\'])(.*?)\2/is';
-        $buffer = preg_replace_callback($attrPattern, $preserveCallback, $buffer);
+        $result = preg_replace_callback($attrPattern, $preserveCallback, $buffer);
+        if ($result !== null) {
+            $buffer = $result;
+        }
 
         return $buffer;
     }

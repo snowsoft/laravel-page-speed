@@ -95,7 +95,7 @@ class InlineCss extends PageSpeed
     {
         // Performance: Use preg_replace_callback instead of explode('<') + loop
         // This avoids creating a large array from exploding HTML
-        $this->html = preg_replace_callback(
+        $result = preg_replace_callback(
             '/<([^>]+)>/s',
             function ($matches) {
                 $tagContent = $matches[1];
@@ -122,6 +122,10 @@ class InlineCss extends PageSpeed
             },
             $this->html
         );
+        
+        if ($result !== null) {
+            $this->html = $result;
+        }
 
         return $this;
     }
